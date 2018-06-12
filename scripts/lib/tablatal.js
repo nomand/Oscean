@@ -13,7 +13,8 @@ function Tablatal(data)
       for(i in key){
         entry[i] = lines[id].substr(key[i].from,key[i].to).trim();
       }
-      a.push(type ? new type(entry) : entry);
+      if(lines[id].trim() != "")
+        a.push(type ? new type(entry) : entry);
     }
     return a
   }
